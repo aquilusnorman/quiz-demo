@@ -1,26 +1,28 @@
 import React, { useState } from 'react';
-import { CategoryRoot, Title, Box, BoxContainer } from './Category.elements';
+import { CategoryRoot, Item, Box } from './Category.elements';
+import { Title } from '../../Styles';
 
 const Category = () => {
 
-  const [catState, setCatState] = useState('');
-
-  const changeCategory = (val) => {
-    setCatState(val);
-  }
-
   return(
       <CategoryRoot>
-          <Title>CHOOSE CATEGORY</Title>
-          <BoxContainer>
-            <Box to="#" style={{ marginRight: '20px' }}>
-              <Title onClick={() => changeCategory('Sports')}>Sports</Title>
-            </Box>
-            <Box to="#" style={{ marginLeft: '20px' }}>
-              <Title onClick={() => changeCategory('Mystery')}>Mystery</Title>
-            </Box>
-          </BoxContainer>
-          <Title>{catState}</Title>
+
+        <Item>
+          <Title style={{ textAlign: 'center' }}>CHOOSE CATEGORY</Title>
+        </Item>
+
+        <Item sd={4} ed={8}>
+          <Box to="/quiz" state={{ category: 'Sports' }}>
+            <Title>Sports</Title>
+          </Box>
+        </Item>
+
+        <Item sd={8} ed={12}>
+          <Box to="/quiz" state={{ category: 'Science' }}>
+            <Title>Science</Title>
+          </Box>
+        </Item>
+       
       </CategoryRoot>
   );
 };

@@ -1,26 +1,26 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Grid, Row } from '../../Layout'
+import { TextField } from '@mui/material';
 
-export const HomeRoot = styled.div`
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+export const HomeRoot = styled(Grid)`
     
-    justify-content: center;
-    align-items: center;
-
-    background: rgb(216,243,220);
-    background: linear-gradient(144deg, rgba(216,243,220,1) 0%, rgba(27,67,50,1) 100%);
 `
 
-export const Title = styled.div`
-    font-size: 80px;
+export const Item = styled(Row)`
+    
+`
+
+export const SL = styled.div`
+    font-size: 70px;
     font-weight: bold;
-    margin-bottom: 80px;
+
+    &:hover {
+        transform: scale(1.01);
+    }
 `
 
-export const Button = styled(Link)`
+export const StartButton = styled.div`
     width: 352px;
     height: 95px;
     border: 5px solid black;
@@ -44,4 +44,44 @@ export const Button = styled(Link)`
 export const ButtonText = styled.div`
     font-weight: 500;
     font-size: 64px;
+`
+
+export const ModalBox = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 2px solid black;
+    box-shadow: 10px 10px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+
+export const ModalField = styled(TextField)`
+    width: 500px;
+    margin-top: 20px !important;
+    padding: 10px !important;
+    background: #EFEFEF;
+    border-radius: 30px;
+`
+
+export const Button = styled.div`
+    width: 200px;
+    height: auto;
+    background: #C4C4C4;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+
+    &:hover{
+        transform: scale(1.01);
+    }
 `
